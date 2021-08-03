@@ -6,3 +6,5 @@ omit =
     */.git/*
     */tests/*
     *settings.py*
+    */migrations/*
+    manage.py
