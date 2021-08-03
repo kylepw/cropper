@@ -15,7 +15,7 @@ class URLViewSet(
     serializer_class = URLSerializer
 
     def retrieve(self, request, pk=None):
+        """ Retrieve objects by url_hash, not pk and redirect."""
         queryset = URL.objects.all()
-        # Retrieve objects by url_hash, not pk.
         url = get_object_or_404(queryset, url_hash=pk)
         return redirect(url.url)
