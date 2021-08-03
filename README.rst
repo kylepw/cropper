@@ -30,7 +30,7 @@ Usage
 
 - Run tests (from cropper directory): ::
 
-    python3 manage.py tests
+    python3 manage.py test
 
 The Meat
 --------
