@@ -9,13 +9,12 @@ from .settings import URL_HASH_LENGTH
 
 
 def custom_exception_handler(exc, context):
-    """Steamline error responses with details placed in 'detail' of payload."""
+    """Steamline error responses status codes."""
     response = exception_handler(exc, context)
 
-    if response is None:
-        response = Response(
-                {"detail": str(exc)},  status=status.HTTP_400_BAD_REQUEST
-            )
+    if response is not None:
+        response.data['status_code'] = response.status_code
+
     return response
 
 
