@@ -1,6 +1,7 @@
 
 """cropperapi model serializers (define model fields accessible in API)."""
 from logging import getLogger
+import urllib.parse
 
 from rest_framework import serializers
 
@@ -30,4 +31,4 @@ class URLSerializer(serializers.ModelSerializer):
                 uri = request.build_absolute_uri()
             except Exception as e:
                 logger.error(f'Failed to get host: {e}')
-        return '/'.join([uri, obj.url_hash]) if uri else obj.url_hash
+        return urllib.parse.urljoin(uri, obj.url_hash) if uri else obj.url_hash
