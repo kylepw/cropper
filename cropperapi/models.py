@@ -11,7 +11,8 @@ class URL(models.Model):
 
     @property
     def mins_since_created(self):
-        return ((timezone.now() - self.created).seconds//60) % 60
+        return ((timezone.now() - self.created).seconds // 60) % 60
+
     class Meta:
         ordering = ['-created']
 

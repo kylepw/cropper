@@ -28,9 +28,14 @@ Usage
          -H 'Content-Type: application/json' \
          -d '{"url":"https://www.wfmu.org/recentarchives.php"}'
 
-- Run tests (from cropper directory): ::
+- Run tests (from top of repo): ::
 
     python3 manage.py test
+
+- Test coverage (from top of repo): ::
+  
+    coverage run manage.py test
+    coverage report
 
 The Meat
 --------

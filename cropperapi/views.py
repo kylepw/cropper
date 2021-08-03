@@ -7,9 +7,7 @@ from .serializers import URLSerializer
 
 
 class URLViewSet(
-    mixins.CreateModelMixin,
-    mixins.ListModelMixin,
-    viewsets.GenericViewSet,
+    mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet,
 ):
     queryset = URL.objects.all()
     serializer_class = URLSerializer

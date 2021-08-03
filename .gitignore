@@ -11,3 +11,11 @@ db.sqlite3-journal
 # env stuff
 .env*
 venv/
+
+# coverage
+.coverage
+coverage.data
+
+# MacOS
+.DS_Store
+Desktop.ini

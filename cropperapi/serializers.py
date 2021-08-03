@@ -1,4 +1,3 @@
-
 """cropperapi model serializers (define model fields accessible in API)."""
 from logging import getLogger
 import urllib.parse
@@ -13,6 +12,7 @@ logger = getLogger(__name__)
 class URLSerializer(serializers.ModelSerializer):
     # Custom attribute
     shortened_url = serializers.SerializerMethodField()
+
     class Meta:
         model = URL
         fields = [
@@ -22,6 +22,7 @@ class URLSerializer(serializers.ModelSerializer):
             #'url_hash',
             #'created',
         ]
+
     def get_shortened_url(self, obj):
         """Combine server hostname with url_hash if available."""
         uri = ''

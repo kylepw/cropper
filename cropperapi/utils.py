@@ -26,15 +26,14 @@ def generate_hash(url_cls):
     Returns:
         str: unique alphanumeric hash
     """
+
     def _generate_hash():
         valid_chars = string.ascii_lowercase + string.digits
         return "".join([random.choice(valid_chars) for _ in range(URL_HASH_LENGTH)])
-    
+
     new_hash = _generate_hash()
     # Keep trying until we get a unique hash.
     while url_cls.objects.filter(url_hash=new_hash).exists():
         new_hash = _generate_hash()
 
     return new_hash
-
-
