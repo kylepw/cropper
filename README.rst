@@ -1,7 +1,7 @@
 =======
 Cropper
 =======
-URL shortener API example in Django.
+URL shortener API example in Django REST framework.
 
 Setup
 -----
